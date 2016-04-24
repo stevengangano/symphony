@@ -24,3 +24,9 @@
 	margin-bottom: 15px;
 	clear: both;
 }
+
+#square {
+	height: 500px;
+	width: 500px;
+	background-color: orange;
+}

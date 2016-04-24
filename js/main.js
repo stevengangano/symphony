@@ -30,7 +30,7 @@ function searchBooks(){
 	
 	   		// Description
 	   		var para=document.createElement('P')
-	   		var description=document.createTextNode('Description: ' + jdata.description)
+	   		var description=document.createTextNode(jdata.description)
 	   		para.className='desc'
 	   		para.appendChild(description)
 	   		mainDiv.appendChild(para)
