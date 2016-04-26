@@ -17,13 +17,15 @@ function searchBooks(){
 
 	   		// Title
 	   		var newH5=document.createElement('h5')
-	   		var title= document.createTextNode('Title: ' + jdata.title)
+	   		var title= document.createTextNode(jdata.title)
+	   		newH5.className="bookTitle"
 	   		newH5.appendChild(title)
 	   		mainDiv.appendChild(newH5)
 
 	   		// Author
 	   		var newH6= document.createElement('h6')
 	   		var author= document.createTextNode('Author: ' + jdata.authors[0])
+	   		newH6.className="bookAuthor"
 	   		newH6.appendChild(author)
 	   		mainDiv.appendChild(newH6)
 
@@ -31,7 +33,7 @@ function searchBooks(){
 	   		// Description
 	   		var para=document.createElement('P')
 	   		var description=document.createTextNode(jdata.description)
-	   		para.className='desc'
+	   		para.className='bookDescription'
 	   		para.appendChild(description)
 	   		mainDiv.appendChild(para)
 
