@@ -1,88 +1,63 @@
-function searchBooks(){
-	var search =  document.getElementById("search").value
-	document.getElementById("results").innerHTML = ""
+document.getElementById("results").innerHTML = ""
 
-	$.ajax({
-	    url: "https://www.googleapis.com/books/v1/volumes?q=" + search ,
-	    dataType: "json",
-	    success: function(data) {
-	   
-	    for(i=0;i<data.items.length;i++){
-	   		var jdata = data.items[i].volumeInfo // loops through everything in volumeInfo array
-	 
-	   		// Inserts title, author, description, thumbnail, button here
-	   		var mainDiv = document.createElement('div') 
-	    	mainDiv.className = "col-sm-12 img-thumbnail"
+$.ajax({
+    url: "https://api.myjson.com/bins/1040j",
+    // url: "../symphonyJSON.js",
+    dataType: "json",
+    success: function(data) {
+   
+    for(i=0;i<data.products.length;i++){
 
+   		var jdata = data.products[i]// loops through everything in volumeInfo array
+ 		
+   		// Inserts title, author, description, thumbnail, button here
+   		var mainDiv = document.createElement('div') 
+   		mainDiv.setAttribute('id', 'background')
+    	mainDiv.className = "col-lg-4 col-md-4 col-sm-6 col-xs-12"
 
-	   		// Title
-	   		var newH5=document.createElement('h5')
-	   		var title= document.createTextNode(jdata.title)
-	   		newH5.className="bookTitle"
-	   		newH5.appendChild(title)
-	   		mainDiv.appendChild(newH5)
+   		//Product Image
+   		var newImg=document.createElement('img')
+   		var innerDiv=document.createElement('div')
+   		var HR = document.createElement('HR')
+   		innerDiv.className = 'innerDiv';
+   		HR.className=('hr')
+   		newImg.setAttribute('src', jdata.mainImage.ref)
+   		newImg.setAttribute('alt', 'some fiji image')
+   		newImg.className = 'productImage';
+   		innerDiv.appendChild(newImg)
+   		mainDiv.appendChild(innerDiv)
+   		mainDiv.appendChild(HR)
+   	
+   		//Product Name
+   		var newH5=document.createElement('h6')
+   		var title= document.createTextNode(jdata.name)
+   		newH5.className="productName";
+   		newH5.appendChild(title)
+   		mainDiv.appendChild(newH5)
 
-	   		// Author
-	   		var newH6= document.createElement('h6')
-	   		var author= document.createTextNode('Author: ' + jdata.authors[0])
-	   		newH6.className="bookAuthor"
-	   		newH6.appendChild(author)
-	   		mainDiv.appendChild(newH6)
+   		price1 = jdata.defaultPriceInCents 
 
-	
-	   		// Description
-	   		var para=document.createElement('P')
-	   		var description=document.createTextNode(jdata.description)
-	   		para.className='bookDescription'
-	   		para.appendChild(description)
-	   		mainDiv.appendChild(para)
+   		//Product Price
+   		var newH6 = document.createElement('h6')
+   		var price = document.createTextNode("$" + price1/100)
+   		newH6.className = 'productPrice'
+   		newH6.appendChild(price)
+   		mainDiv.appendChild(newH6)
 
+   		if (price1 === 995) {
+    		document.getElementById('background').style.display = 'none';
+    	}
 
-	   		// Thumbnail 
-	   		var newImg=document.createElement('img')
-	   		newImg.setAttribute('src', jdata.imageLinks.thumbnail)
-	   		newImg.className="img-rounded img-responsive"
-	   		newImg.className="margin"
-	   		mainDiv.appendChild(newImg)
+   		document.getElementById('results').appendChild(mainDiv)
 
-	   		// Learn more Button
-	   		var newDiv=document.createElement('div')
-	   		var newAtag=document.createElement('a')
-	   		newAtag.innerHTML = "Learn more"
-	   		newAtag.className = "btn btn-info"
-	   		newAtag.setAttribute('href', jdata.infoLink)
-	   		newAtag.setAttribute('target', '_blank')
-	   		newDiv.appendChild(newAtag)
-	 		mainDiv.appendChild(newDiv)
+   		//Bonus Questions:
+		// Create a filtering rule (eg, hide products if less than $20)
+		// Create sorting rule (eg, display products by name, price, date)
 
-	   		document.getElementById('results').appendChild(mainDiv)
-
-	    }
-	    },
-	    type: 'GET'
-	});
-}
-
-document.getElementById('button').addEventListener('click', searchBooks, false)
-
-
-// Activates the enter key
-function searchKeyPress(e) {
-    // look for window.event in case event isn't passed in
-    e = e || window.event;
-    if (e.keyCode == 13)
-    {
-        document.getElementById('button').click();
-        return false;
-    }
-    return true;
-}
-
-
-
-
-
-
+    	} //FOR LOOP END
+    }, //SUCCESS END
+    type: 'GET'
+}); //AJAX END
 
 
 

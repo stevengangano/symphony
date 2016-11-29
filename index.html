@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Google Books</title>
+	<title>Symphony Commerce Fiji Water</title>
 
 	<meta charset="UTF-8">
 
@@ -9,51 +9,60 @@
 
 	<!-- CSS -->
 	<link rel = "stylesheet" href="css/main.css">
+	<link rel = "stylesheet" href="css/responsive.css">
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Tillana:600,800' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Nunito:700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Marvel:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Tillana:600,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Nunito:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Marvel:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
 </head>
+				
+<div class="container-fluid">
 
-<!-- Cover Photo -->
-<body class='background'>
-	<div class='container-fluid'>
-		<div class='row'>
-			<div class='col-md-12 text-center'>
-				<img src=' http://www.lcsedu.net/schools/les/sites/www.lcsedu.net.schools.les/files/images/books1.jpg'>
-			</div>
-		</div>
-	</div>
-		
-<!-- Search Bar -->				
-<div class="container">
-	<h1 class='title text-center'>Google Books Finder</h1>
-		<div class="row">
-	  		<div class="col-sm-12 text-center">
-	    		<input id = "search" placeholder="Title" onkeydown="return searchKeyPress(event)"/><br><br>
-				<button class="btn btn-success" id="button" onclick="searchButton()">SEARCH</button>
-			</div>	
+	<h1><img class="img-responsive" src="img/logo.png"></h1>
+
+	<hr class="hr-top">
+
+	  <div class="dropdown">
+	    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown"> Filter By Price
+	    <span class="caret"></span></button>
+	    <ul class="dropdown-menu">
+	      <li><a onclick="" ="#">$0 - $10 </a></li>
+	      <li><a onclick="">$11 - $20 </a></li>
+	      <li><a onclick="">$21 - $35</a></li>
+	    </ul>
 	  </div>
-</div> <!-- end row -->
-	
-<div id="results"></div>
+
+
+	<div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">	
+				<div id="results"></div>
+			</div>
+		</div>	
+	</div>
+
+</div>	
+
+<footer class="container-fluid">
+	<div class='footer text-center'>	
+	© 2016 SYMPHONY COMMERCE. INC. ALL RIGHTS RESERVED
+	<br>
+	1045 BRYANT STREET, SUITE 200, SAN FRANCISCO, CA, 94103, UNITED STATES
+	</div>
+</footer>
 
 <!-- Jquery -->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- JS -->
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/jquery.zoom.min.js"></script> 
 <!-- Bootstrap JS -->
-<script src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/main.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
 </body>
 </html>
