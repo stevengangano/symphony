@@ -2,6 +2,9 @@
 	border-color: black;
 }
 
+.title {
+	font-family: 'Bungee', cursive;
+}
 #results {
 	margin: 15px 0;
 }
@@ -9,7 +12,6 @@
 #background {
 	background: white;
 	height: 300px;
-	/*border: 1px solid #D6D6D6;*/
 	border-radius: 5px;
 	overflow: hidden;
 	margin-bottom: 10px;
@@ -43,7 +45,7 @@
 }
 
 footer {
-	border-top: 2px solid black;
+	border-top: 1px solid black;
 	padding: 25px;
 	background-color: #23B1D9;
 }
