@@ -9,7 +9,7 @@ $.ajax({
 
       var productData = data.products[i]
     
-      // Inserts product image, name, andn price 
+      //Inserts product image, name, andn price 
       var mainDiv = document.createElement('div') 
       mainDiv.setAttribute('id', 'background')
       mainDiv.className = "col-lg-4 col-md-4 col-sm-6 col-xs-12"
@@ -24,7 +24,6 @@ $.ajax({
       newImg.setAttribute('src', productData.mainImage.ref)
       newImg.setAttribute('alt', 'some fiji image')
       newImg.className = 'productImage';
-      newImg.setAttribute('id', 'pImage')
       innerDiv.appendChild(newImg)
       mainDiv.appendChild(innerDiv)
       mainDiv.appendChild(HR)
@@ -33,7 +32,6 @@ $.ajax({
       var newH5=document.createElement('h6')
       var title= document.createTextNode(productData.name)
       newH5.className="productName";
-      newH5.setAttribute('id', 'product')
       newH5.appendChild(title)
       mainDiv.appendChild(newH5)
      
@@ -47,16 +45,42 @@ $.ajax({
 
       document.getElementById('results').appendChild(mainDiv)
 
-    //   Filter Attempt
-    //   $("#underTen").click(function(){     
-    //     if(dollarAmount == 20) {
-    //       $(".productName").css("display", "none");
-    //       Look up how to hide "dollarAmount"
-    //     }
-    // });
+      //My attempt to filtering each product by price
+      var productPrices = productData.defaultPriceInCents/100
+      console.log(productPrices)
 
+      //Show under $10
+      var underTenfilter = function(price) {
+          return price > 9.95
+      }
 
-  
+      var underTen = function() {
+          var filteredPrices1 = productPrices.filter(underTenfilter)
+          if (filteredPrices1) {         
+            $("#background").css("display", "none");
+          }
+      }
+
+      //Show $11 - $20
+      var elevenAndtwenty = function() {
+          if (productPrices < 10 || productPrices > 20) {         
+            $("#background").css("display", "none");
+          }
+      }
+
+      //Show $21 - $35
+      var twentyoneAndthirtyfiveFilter  = function(price) {
+        return price <= 20
+
+      }
+
+      var twentyoneAndthirtyfive = function() {
+          var filteredPrices2 = productPrices.filter(underTenfilter)
+          if (filteredPrices2) {         
+            $("#background").css("display", "none");
+          }
+      }
+
 
       } //FOR LOOP END
     }, //SUCCESS END

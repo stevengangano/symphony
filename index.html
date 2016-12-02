@@ -31,9 +31,10 @@
     <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown"> Filter By Price
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li id="underTen"><a href="#">$0 - $10 </a></li>
-      <li id="myFunction()"><a href="#">$11 - $20 </a></li>
-      <li><a onclick="">$21 - $35</a></li>
+      <li><a href="">Show All</a></li>
+      <li onclick="underTen()"><a href="#">$0 - $10 </a></li>
+      <li onclick="elevenAndtwenty()"><a href="#">$11 - $20 </a></li>
+      <li onclick="twentyoneAndthirtyfive()"><a href="#">$21 - $35</a></li>
     </ul>
   </div>
 
@@ -41,7 +42,6 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div id="results"></div>
-				<div id="test"></div>
 			</div>
 		</div>	
 	</div>
